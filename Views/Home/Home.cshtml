@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+  <title>Tamagotchi</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Create your own Tamagotchi</h1>
+    <img id="tamagotchi" src='~/img/green.jpg'/>
+    <form action="/status" method="post">
+      <div class="form-group">
+        <label for="tamagotchi-name">Enter a Name</label>
+        <input id ="tamagotchi-name" name="tamagotchi-name" class ="form-control" type="text">
+      </div>
+      <form action="/status" method="post">
+        <button type="submit" name="button">Play!</button>
+      </form>
+    </div>
+  </body>
+  </html>
