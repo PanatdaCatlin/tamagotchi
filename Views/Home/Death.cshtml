@@ -7,8 +7,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>Your Tamagotchi Died :[</h1>
-    <p>You killed him! <a href="/home">Make a new Tamagotchi.</a></p>
+    <h1>@Model.GetTamagotchiName() has Died :[</h1>
+    <img class="tamagotchi" src='~/img/dead.png'/>
+    <p>You killed @Model.GetTamagotchiName()! <a href="/home">Make a new Tamagotchi.</a></p>
   </div>
 </body>
 </html>

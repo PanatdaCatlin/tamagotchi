@@ -9,6 +9,7 @@ namespace Tamagotchi.Controllers
     [Route("/home")]
     public ActionResult Home()
     {
+      TamagotchiVariable.ClearAll();
       return View();
     }
     [Route("/status")]
@@ -23,30 +24,27 @@ namespace Tamagotchi.Controllers
     public ActionResult MinusHealth()
     {
       TamagotchiVariable myTamagotchiVariable = TamagotchiVariable.Find(1);
-      myTamagotchiVariable.TakeHealth();
+      if (myTamagotchiVariable.CheckHealth())
+      {
+        return View("Status", myTamagotchiVariable);
+      }else{
+        return RedirectToAction("Death");
+      }
+
+    }
+    [HttpGet("/giveHealth")]
+    public ActionResult AddHealth()
+    {
+      TamagotchiVariable myTamagotchiVariable = TamagotchiVariable.Find(1);
+      myTamagotchiVariable.PlusHealth();
       return View("Status", myTamagotchiVariable);
-    }
-    [Route("/food")]
-    public ActionResult Food()
-    {
-      return View();
-    }
-    [Route("/play")]
-    public ActionResult Play()
-    {
-      return View();
-    }
-    [Route("/sleep")]
-    public ActionResult Sleep()
-    {
-      return View();
     }
     [Route("/death")]
     public ActionResult Death()
     {
-      return View();
+      TamagotchiVariable myTamagotchiVariable = TamagotchiVariable.Find(1);
+      return View("Death", myTamagotchiVariable);
+
     }
-
-
   }
 }
