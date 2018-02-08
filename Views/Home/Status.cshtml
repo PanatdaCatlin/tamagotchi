@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
   <title>Status</title>
 </head>
 <body>
   <div class="container">
     <h1>Status page</h1>
+    <div class="row">
+      <div class ="col">
+          <img class="tamagotchi" src='~/img/green.jpg'/>
+          <h3>@Model.GetTamagotchiName()</h3>
+          <a href="/takeHealth"><button class="btn btn-info" type="button" name="button">Time Machine</button></a>
+      </div>
+      <div class ="col">
+        <h2>Life Bar</h2>
+        <br>
+        <h3>@Model.GetHealth()</h3>
+
+  <a href="/food" class="btn btn-info" role="button">Feed</a>
+<br>
+  <a href="/play" class="btn btn-info" role="button">Play</a><br>
+    <a href="/sleep" class ="btn btn-info" role="button">Put to Bed</a>
+      </div>
+  </div>
   </div>
 </body>
 </html>

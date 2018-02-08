@@ -11,6 +11,21 @@ namespace Tamagotchi.Controllers
     {
       return View();
     }
+    [Route("/status")]
+    public ActionResult Status()
+    {
+      TamagotchiVariable myTamagotchiVariable = new TamagotchiVariable();
+      myTamagotchiVariable.SetName(Request.Query["tamagotchi-name"]);
+      myTamagotchiVariable.Save();
+      return View("Status", myTamagotchiVariable);
+    }
+    [HttpGet("/takeHealth")]
+    public ActionResult MinusHealth()
+    {
+      TamagotchiVariable myTamagotchiVariable = TamagotchiVariable.Find(1);
+      myTamagotchiVariable.TakeHealth();
+      return View("Status", myTamagotchiVariable);
+    }
     [Route("/food")]
     public ActionResult Food()
     {

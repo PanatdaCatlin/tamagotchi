@@ -8,13 +8,12 @@
 <body>
   <div class="container">
     <h1>Create your own Tamagotchi</h1>
-    <img id="tamagotchi" src='~/img/green.jpg'/>
-    <form action="/status" method="post">
+    <img class="tamagotchi" src='~/img/green.jpg'/>
+    <form action="/status">
       <div class="form-group">
         <label for="tamagotchi-name">Enter a Name</label>
         <input id ="tamagotchi-name" name="tamagotchi-name" class ="form-control" type="text">
       </div>
-      <form action="/status" method="post">
         <button type="submit" name="button">Play!</button>
       </form>
     </div>
